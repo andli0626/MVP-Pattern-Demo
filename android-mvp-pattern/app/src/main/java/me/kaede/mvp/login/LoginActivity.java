@@ -1,19 +1,25 @@
 package me.kaede.mvp.login;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
 import me.kaede.mvp.R;
 import me.kaede.mvp.login.presenter.ILoginPresenter;
 import me.kaede.mvp.login.presenter.LoginPresenterCompl;
 import me.kaede.mvp.login.view.ILoginView;
 
+/**
+ * author andli
+ * create at 16/6/7 上午10:29
+ * 登录界面：实现ILoginView接口
+ **/
 
-public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
+public class LoginActivity extends Activity implements ILoginView, View.OnClickListener {
 
 	private EditText 	editUser;
 	private EditText 	editPass;
@@ -21,6 +27,7 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 	private Button   	btnLogin;
 	private Button   	btnClear;
 
+    // 登录逻辑处理
 	ILoginPresenter     loginPresenter;
 
 	private ProgressBar progressBar;
