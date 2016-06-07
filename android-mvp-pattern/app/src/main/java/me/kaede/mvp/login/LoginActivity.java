@@ -71,12 +71,16 @@ public class LoginActivity extends Activity implements ILoginView, View.OnClickL
 		}
 	}
 
+    /******************************** 实现ILoginView接口:进行视图逻辑的相关操作 START ********************************/
+
+    // 清空文本输入框
 	@Override
 	public void onClearText() {
 		editUser.setText("");
 		editPass.setText("");
 	}
 
+    // 登录结果处理
 	@Override
 	public void onLoginResult(Boolean result, int code) {
 		loginPresenter.setProgressBarVisiblity(View.INVISIBLE);
@@ -89,9 +93,10 @@ public class LoginActivity extends Activity implements ILoginView, View.OnClickL
 			Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
 	}
 
+    // 控制进度条对话框
 	@Override
 	public void onSetProgressBarVisibility(int visibility) {
 		progressBar.setVisibility(visibility);
 	}
-	
+    /******************************** 实现ILoginView接口:进行视图逻辑的相关操作 END ********************************/
 }

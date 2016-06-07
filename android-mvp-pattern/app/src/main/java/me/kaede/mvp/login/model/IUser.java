@@ -1,12 +1,16 @@
 package me.kaede.mvp.login.model;
 
 /**
- * Created by estel on 2015/10/12.
- */
+ * author andli
+ * create at 16/6/7 上午11:10
+ * 数据层接口
+ **/
+
 public interface IUser {
-	String getName();
-
-	String getPasswd();
-
-	int checkUserValidity(String name, String passwd);
+    // 获取用户名
+    String getName();
+    // 获取密码
+    String getPasswd();
+    // 校验登录
+    int checkUserValidity(String name, String passwd);
 }

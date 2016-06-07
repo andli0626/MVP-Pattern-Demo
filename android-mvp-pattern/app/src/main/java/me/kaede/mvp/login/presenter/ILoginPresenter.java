@@ -1,10 +1,18 @@
 package me.kaede.mvp.login.presenter;
 
 /**
- * Created by kaede on 2015/10/12.
- */
+ * author andli
+ * create at 16/6/7 上午11:01
+ * 登录逻辑处理接口
+ **/
+
 public interface ILoginPresenter {
-	void clear();
-	void doLogin(String name, String passwd);
-	void setProgressBarVisiblity(int visiblity);
+    // 清空
+    void clear();
+
+    // 执行登录
+    void doLogin(String name, String passwd);
+
+    // 设置进度条对话框
+    void setProgressBarVisiblity(int visiblity);
 }
