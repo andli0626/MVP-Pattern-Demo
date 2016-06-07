@@ -15,11 +15,14 @@ import me.kaede.mvp.login.view.ILoginView;
 
 public class LoginActivity extends ActionBarActivity implements ILoginView, View.OnClickListener {
 
-	private EditText editUser;
-	private EditText editPass;
-	private Button   btnLogin;
-	private Button   btnClear;
-	ILoginPresenter loginPresenter;
+	private EditText 	editUser;
+	private EditText 	editPass;
+
+	private Button   	btnLogin;
+	private Button   	btnClear;
+
+	ILoginPresenter     loginPresenter;
+
 	private ProgressBar progressBar;
 
 	@Override
@@ -28,10 +31,11 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 		setContentView(R.layout.activity_login);
 
 		//find view
-		editUser = (EditText) this.findViewById(R.id.et_login_username);
-		editPass = (EditText) this.findViewById(R.id.et_login_password);
-		btnLogin = (Button) this.findViewById(R.id.btn_login_login);
-		btnClear = (Button) this.findViewById(R.id.btn_login_clear);
+		editUser 	= (EditText) this.findViewById(R.id.et_login_username);
+		editPass 	= (EditText) this.findViewById(R.id.et_login_password);
+		btnLogin 	= (Button)   this.findViewById(R.id.btn_login_login);
+		btnClear 	= (Button)   this.findViewById(R.id.btn_login_clear);
+
 		progressBar = (ProgressBar) this.findViewById(R.id.progress_login);
 
 		//set listener
@@ -46,9 +50,11 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()){
+			// 清空
 			case R.id.btn_login_clear:
 				loginPresenter.clear();
 				break;
+			// 登录
 			case R.id.btn_login_login:
 				loginPresenter.setProgressBarVisiblity(View.VISIBLE);
 				btnLogin.setEnabled(false);
@@ -74,11 +80,6 @@ public class LoginActivity extends ActionBarActivity implements ILoginView, View
 		}
 		else
 			Toast.makeText(this,"Login Fail, code = " + code,Toast.LENGTH_SHORT).show();
-	}
-
-	@Override
-	protected void onDestroy() {
-		super.onDestroy();
 	}
 
 	@Override
